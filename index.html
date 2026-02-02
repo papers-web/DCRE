@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCRE: Distribution-Conditional Retrieval Embedding for Aligning LLM Agents with Statistical Ecosystems</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        h1, h2 { text-align: center; }
+        .authors { text-align: center; font-style: italic; }
+        .links { text-align: center; margin: 20px 0; }
+        .links a { margin: 0 10px; text-decoration: none; color: blue; }
+        .abstract { border: 1px solid #ddd; padding: 15px; background: #f9f9f9; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: #f2f2f2; }
+        figure { text-align: center; margin: 20px 0; }
+        figcaption { font-style: italic; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>DCRE: Distribution-Conditional Retrieval Embedding for Aligning LLM Agents with Statistical Ecosystems</h1>
+    <div class="authors">Anonymous submission</div>
+    <div class="links">
+        <a href="#" target="_blank">[Paper PDF]</a>
+        <a href="#" target="_blank">[Code & Data]</a>
+    </div>
+
+    <h2>Abstract</h2>
+    <div class="abstract">
+        Large Language Model (LLM)-based agents have shown strong capabilities in automating data science workflows, yet many rigorous and domain-specific statistical methods remain underutilized due to limitations in model knowledge and tooling. Existing Retrieval-Augmented Generation (RAG) approaches rely primarily on function-level semantic similarity and fail to account for data distribution characteristics that critically determine the applicability of statistical methods, leading to inaccurate retrieval and inefficient use of statistical resources. To address this limitation, we propose \textbf{DCRE} (\textbf{D}istribution-\textbf{C}onditional \textbf{R}etrieval \textbf{E}mbedding), a distribution-aware retrieval model that conditions function representations on data distribution profiles. Our contributions are threefold: (i) we construct a curated knowledge base of \textbf{8,191 high-quality R functions} spanning diverse statistical domains; (ii) we introduce DCRE, an embedding model that explicitly incorporates data distribution information for accurate R package retrieval; and (iii) we design \textbf{URTABench}, a benchmark for evaluating LLM agents on R-based data analysis tasks. Experimental results show that DCRE achieves an \textbf{NDCG@10 of 0.9347}, outperforming open-source state-of-the-art embedding models by \textbf{up to 17\%} while using only \textbf{23M parameters}. Furthermore, integrating DCRE into LLM agents significantly improves downstream data science performance on URTABench.
+    </div>
+
+    <h2>Overview</h2>
+    <figure>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABX0AAAGJCAYAAADsP... [placeholder]" alt="Figure 1: Overview">
+        <figcaption>Figure 1: Overview</figcaption>
+    </figure>
+
+    <h2>Benchmark Distribution</h2>
+    <figure>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABX0AAAGJCAYAAADsP... [placeholder]" alt="Figure 2: Distribution">
+        <figcaption>Figure 2: Distribution</figcaption>
+    </figure>
+
+    <h2>Model Performance</h2>
+    <figure>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABX0AAAGJCAYAAADsP... [placeholder]" alt="Figure 3: Overall Model Performance">
+        <figcaption>Figure 3: Overall Model Performance.</figcaption>
+    </figure>
+
+    <h2>Fine-grained Analysis</h2>
+    <figure>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABX0AAAGJCAYAAADsP... [placeholder]" alt="Figure 4: Fine-grained Performance Analysis">
+        <figcaption>Figure 4: Fine-grained Performance Analysis.</figcaption>
+    </figure>
+
+    <h2>Efficiency and Cost</h2>
+    <figure>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABX0AAAGJCAYAAADsP... [placeholder]" alt="Figure 5: Efficiency & Cost-Effectiveness Trade-offs">
+        <figcaption>Figure 5: Efficiency & Cost-Effectiveness Trade-offs.</figcaption>
+    </figure>
+
+    <h2>Comparison of Benchmarks</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Benchmark</th>
+                <th>DataSets</th>
+                <th>Questions</th>
+                <th>Hetero. Data</th>
+                <th>Vision-modal Obs</th>
+                <th>Multi-step</th>
+                <th>Deep Learning</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <figcaption>Table 1: Comparison of Benchmarks.</figcaption>
+
+    <h2>Impact of Multimodal Perception</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Modality</th>
+                <th>S_reason</th>
+                <th>S_code</th>
+                <th>S_result</th>
+                <th>Total Score</th>
+                <th>Gain (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <figcaption>Table 2: Impact of Multimodal Perception.</figcaption>
+
+    <h2>All Model Results</h2>
+    <p></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Total Score</th>
+                <th>Avg. Steps</th>
+                <th>Cost per Session ($)</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</body>
+</html>
