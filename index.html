@@ -19,22 +19,28 @@
             background-color: #fafaFA;
         }
 
-        .hero-body {
-            padding-bottom: 2rem;
+        /* 加大 Section 之间的间距 */
+        .section {
+            padding: 5rem 1.5rem; /* 增加上下内边距 */
         }
 
+        .hero-body {
+            padding-bottom: 4rem;
+        }
 
         .title.is-1 {
             font-family: 'Google Sans', sans-serif;
             font-weight: 700;
             font-size: 2.5rem;
+            margin-bottom: 2rem;
         }
 
+        /* 加大子标题与内容的间距 */
         .section-title {
             font-family: 'Google Sans', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem; /* 标题下方的空隙 */
             text-align: center;
         }
 
@@ -47,31 +53,20 @@
             color: #4a4a4a;
         }
 
-        .author-block {
-            font-size: 1.2rem;
-            margin-right: 15px;
-        }
-
-        .institution-block {
-            font-size: 1rem;
-            color: #666;
-            display: block;
-            margin-top: 5px;
-        }
-
-        /* Box Styles */
+        /* Abstract Box 优化 */
         .abstract-box {
             background: #fff;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             text-align: justify;
+            line-height: 1.6;
         }
 
-        /* Table Styles */
+        /* 表格容器间距 */
         .table-container {
             overflow-x: auto;
-            margin: 20px 0;
+            margin: 40px 0;
         }
 
         .custom-table {
@@ -94,47 +89,38 @@
             color: #333;
         }
 
-        .custom-table tr:hover {
-            background-color: #f1f1f1;
-        }
-
         .best-score {
             font-weight: bold;
             color: #d32f2f;
         }
 
-        .second-score {
-            font-weight: bold;
-            color: #1976d2;
-        }
-
-        .gain-positive {
-            color: #2e7d32;
-            font-weight: bold;
-        }
-
-        /* Image Styles */
+        /* 图片居中及样式优化 */
         .teaser-img {
-            width: 100%;
+            display: block; /* 设为块级元素 */
+            margin: 0 auto 1.5rem auto; /* 左右自动实现居中，下边距 1.5rem */
+            max-width: 90%; /* 限制最大宽度 */
             border-radius: 8px;
-            margin-bottom: 10px;
             border: 1px solid #eee;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .caption {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 1rem;
+            color: #555;
             text-align: center;
-            margin-top: 5px;
-            margin-bottom: 20px;
+            margin-top: 1rem;
+            margin-bottom: 4rem; /* 每个图片说明后留下较大间距 */
+            padding: 0 10%;
+            line-height: 1.4;
         }
 
-        /* Code Block */
-        pre {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 5px;
+        /* 统一页面内的图片间距 */
+        .container.is-max-desktop img {
+            margin-top: 2rem;
         }
+        /*img {*/
+        /*    */
+        /*}*/
     </style>
 </head>
 <body>
@@ -144,39 +130,9 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered">
                 <div class="column has-text-centered">
-                    <h1 class="title is-1 publication-title">DCRE: Distribution-Conditional Retrieval Embedding for Aligning LLM Agents with Statistical Ecosystems
-                    </h1>
-
+                    <h1 class="title is-1 publication-title">DCRE: Distribution-Conditional Retrieval Embedding for Aligning LLM Agents with Statistical Ecosystems</h1>
                     <div class="column has-text-centered publication-links">
-<!--                        <span class="link-block">-->
-<!--                          <a href="#" class="button is-dark is-rounded is-outlined">-->
-<!--                            <span class="icon"><i class="fas fa-file-pdf"></i></span>-->
-<!--                            <span>Paper</span>-->
-<!--                          </a>-->
-<!--                        </span>-->
-
-<!--                        <span class="link-block">-->
-<!--                          <a href="https://dsaeval.lambda.org.ai/" class="button is-dark is-rounded is-outlined">-->
-<!--                            <span class="icon"><i class="fas fa-file-alt"></i></span>-->
-<!--                            <span>Task Logs</span>-->
-<!--                          </a>-->
-<!--                        </span>-->
-
-<!--                        <span class="link-block">-->
-<!--                          <a href="https://anonymous.4open.science/r/DSAEval-B39C/" class="button is-dark is-rounded is-outlined">-->
-<!--                            <span class="icon"><i class="fab fa-github"></i></span>-->
-<!--                            <span>Code</span>-->
-<!--                          </a>-->
-<!--                        </span>-->
-
-<!--                        <span class="link-block">-->
-<!--                          <a href="https://anonymous.4open.science/r/DSAEval-B39C/dsaeval.json"-->
-<!--                             class="button is-dark is-rounded is-outlined">-->
-<!--                            <span class="icon"><i class="fas fa-database"></i></span>-->
-<!--                            <span>Data</span>-->
-<!--                          </a>-->
-<!--                        </span>-->
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -189,13 +145,98 @@
             <div class="column is-four-fifths">
                 <h2 class="section-title">Abstract</h2>
                 <div class="abstract-box">
-                    Abstract: Large Language Model (LLM)-based agents have shown strong capabilities in automating data science workflows, yet many rigorous and domain-specific statistical methods remain underutilized due to limitations in model knowledge and tooling. Existing Retrieval-Augmented Generation (RAG) approaches rely primarily on function-level semantic similarity and fail to account for data distribution characteristics that critically determine the applicability of statistical methods, leading to inaccurate retrieval and inefficient use of statistical resources. To address this limitation, we propose DCRE (Distribution-Conditional Retrieval Embedding), a distribution-aware retrieval model that conditions function representations on data distribution profiles. Our contributions are threefold: (i) we construct a curated knowledge base of 8,191 high-quality R functions spanning diverse statistical domains; (ii) we introduce DCRE, an embedding model that explicitly incorporates data distribution information for accurate R package retrieval; and (iii) we design URTABench, a benchmark for evaluating LLM agents on R-based data analysis tasks. Experimental results show that DCRE achieves an NDCG@10 of 0.9347, outperforming open-source state-of-the-art embedding models by up to 17% while using only 23M parameters. Furthermore, integrating DCRE into LLM agents significantly improves downstream data science performance on URTABench.
-                </div>
+                    Large Language Model (LLM)-based agents have shown strong capabilities in automating data science workflows, yet many rigorous and domain-specific statistical methods remain underutilized due to limitations in model knowledge and tooling. Existing Retrieval-Augmented Generation (RAG) approaches rely primarily on function-level semantic similarity and fail to account for data distribution characteristics that critically determine the applicability of statistical methods, leading to inaccurate retrieval and inefficient use of statistical resources.
+                    To address this limitation, we propose <span class="highlight">DCRE</span> (<span class="highlight">D</span>istribution-<span class="highlight">C</span>onditional <span class="highlight">R</span>etrieval <span class="highlight">E</span>mbedding), a distribution-aware retrieval model that conditions function representations on data distribution profiles. Our contributions are threefold:
+                    (i) we construct a curated knowledge base of 8,191 high-quality R package with functions spanning diverse statistical domains;
+                    (ii) we introduce DCRE, an embedding model that explicitly incorporates data distribution information for accurate R package retrieval; and
+                    (iii) we design <span class="highlight">URTABench</span>, the first benchmark for evaluating LLM agents on R-based data analysis tasks.
+                    Experimental results show that DCRE achieves an <span class="accent">NDCG@10 of 0.9347</span>, outperforming open-source state-of-the-art embedding models by up to 17% while using only 23M parameters. Furthermore, integrating DCRE into LLM agents significantly improves downstream statistical analysis performance up to <span class="accent">62.5%</span> on URTABench.
+            </div>
             </div>
         </div>
     </div>
 </section>
 
+<section class="section">
+    <div class="container is-max-desktop">
+        <img src="images/compare.png" class="teaser-img">
+        <p class="caption">
+            <strong>Figure 1:</strong> DCRE significantly improves retrieval accuracy compared with general-purpose embedding models by incorporating distribution-aware representations.
+        </p>
+
+        <img src="images/dcre.png" class="teaser-img">
+        <p class="caption">
+            <strong>Figure 2:</strong> Overview of the DCRE framework. DCRE jointly models semantic intent and data distribution constraints to enable reliable statistical function retrieval.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <h2 class="section-title">Experimental Results</h2>
+
+        <div class="table-container">
+            <table class="custom-table">
+                <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Params</th>
+                    <th>NDCG@10</th>
+                    <th>MRR@10</th>
+                    <th>Recall@10</th>
+                    <th>Recall@1</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>Snowflake/arctic-embed-l</td><td>335M</td><td>0.7932</td><td>0.7510</td><td>0.9235</td><td>0.6549</td></tr>
+                <tr><td>intfloat/e5-large-v2</td><td>335M</td><td>0.7513</td><td>0.7086</td><td>0.8838</td><td>0.6152</td></tr>
+                <tr><td>jina-embeddings-v2-base-en</td><td>137M</td><td>0.7429</td><td>0.6965</td><td>0.8873</td><td>0.5969</td></tr>
+                <tr><td>BAAI/bge-m3</td><td>568M</td><td>0.7308</td><td>0.6843</td><td>0.8758</td><td>0.5847</td></tr>
+                <tr><td>mxbai-embed-large-v1</td><td>335M</td><td>0.7068</td><td>0.6565</td><td>0.8639</td><td>0.5508</td></tr>
+                <tr><td>UAE-Large-V1</td><td>335M</td><td>0.7066</td><td>0.6556</td><td>0.8658</td><td>0.5479</td></tr>
+                <tr><td>gte-large-en-v1.5</td><td>435M</td><td>0.6639</td><td>0.6122</td><td>0.8257</td><td>0.5040</td></tr>
+                <tr><td>all-mpnet-base-v2</td><td>110M</td><td>0.6606</td><td>0.6057</td><td>0.8330</td><td>0.4937</td></tr>
+                <tr><td>Base Model (MiniLM)</td><td>23M</td><td>0.6127</td><td>0.5553</td><td>0.7936</td><td>0.4412</td></tr>
+                <tr>
+                    <td><b>DCRE (Ours)</b></td>
+                    <td><b>23M</b></td>
+                    <td class="best-score">0.9347</td>
+                    <td class="best-score">0.9176</td>
+                    <td class="best-score">0.9863</td>
+                    <td class="best-score">0.8739</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <img src="images/qps.png" class="teaser-img">
+        <p class="caption">
+            <strong>Figure 3:</strong> Efficiency comparison measured by queries-per-second (QPS). Despite its small parameter size, DCRE achieves both superior accuracy and fast retrieval speed.
+        </p>
+
+        <h3 class="title is-4 has-text-centered" style="margin-top: 4rem;">Downstream Agent Performance</h3>
+        <div class="table-container">
+            <table class="custom-table">
+                <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>w/o DCRE</th>
+                    <th>DCRE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>claude-haiku-4.5</td><td>0.0000</td><td class="best-score">0.5625</td></tr>
+                <tr><td>deepseek-v3.2</td><td>0.1250</td><td class="best-score">0.5625</td></tr>
+                <tr><td>gpt-5.2</td><td>0.3125</td><td class="best-score">0.6875</td></tr>
+                <tr><td>grok-4.1-fast</td><td>0.1250</td><td class="best-score">0.7500</td></tr>
+                <tr><td>mimo-v2-flash</td><td>0.0000</td><td class="best-score">0.6250</td></tr>
+                <tr><td>minimax-m2.1</td><td>0.0625</td><td class="best-score">0.6875</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
 
 </body>
 </html>
